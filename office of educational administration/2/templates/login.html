@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登入系统</title>
+</head>
+<style>
+    .box{
+        width: 400px;
+        height: 250px;
+        margin: 10% auto;
+        border: 10px solid #bc73da;
+        border-radius: 20px;
+        position: relative;
+        text-align: center;
+        background-color: rgb(235, 210, 233);
+    }
+</style>
+<body>
+<form action="/actions/login" method="post" class="box">
+    <input placeholder="学/工号" type="text" name="id" style="text-align: center;margin: 10%;width: 80%;height: 30px;border-radius: 30px;border: 1px solid #d2d2d2"/>
+    <input placeholder="密码" type="text" name="password" style="text-align: center;width: 80%;height: 30px;border-radius: 30px;border: 1px solid #d2d2d2"/>
+    <input type="submit" value="登录账户" style="display: block;margin:5% auto"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends "base_tu.html" %}
+
+{% block styles %}
+    <link href="/course_list.css" rel="stylesheet" />
+    <link href="/grade_list.css" rel="stylesheet" />
+{% endblock %}
+
+<!--  -->
+{% block page_content %}
+<div class="paper">
+    <form class="grade-form" action="/course" method="post">
+        <label>学年：</label>
+        <input type="text" name="years" />
+
+        <label>学期：</label>
+        <select name="date">
+            <option value="">--选择--</option>
+            {% for item in studate %}
+            <option value="{{item}}">
+                {{item}}
+            </option>
+            {% endfor %}
+        </select>
+        <label>班级：</label>
+        <select name="cid">
+            <option value="">--选择--</option>
+            {% for item in classlist %}
+            <option value="{{item.class_id}}">
+                {{item.class_id}}
+            </option>
+            {% endfor %}
+        </select>
+        <label>学/工号：</label>
+        <input type="text" name="id"/>
+        <input type="submit" value="查询课表" />
+    </form>
+    <table>
+        <tr>
+            <th>课程名</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
